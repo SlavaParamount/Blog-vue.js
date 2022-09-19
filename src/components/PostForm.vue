@@ -1,14 +1,16 @@
 <template>
     <form @submit.prevent>
             <h4>Создание поста</h4>
-            <input v-model="post.title" @input="title = $event.target.value" class="input" type="text" placeholder="Заголовок">
-            <input v-model="post.body" @input="body = $event.target.value" class="input" type="text" placeholder="Текст">
-            <button class="btn" @click="createPost">Добавить пост</button>
+            <my-input v-model="post.title"  type="text" placeholder="Заголовок" />
+            <my-input v-model="post.body" type="text" placeholder="Текст" />
+            <my-button class="btn" style="margin-top: 15px" @click="createPost">Добавить пост</my-button>
         </form>
 </template>
 
 <script>
+
 export default {
+    
     data() {
         return {
             post: {
@@ -36,19 +38,4 @@ form {
     flex-direction: column;
 }
 
-.input {
-    width: 100%;
-    border: 1px solid teal;
-    padding: 10px 15px;
-    margin-top: 15px;
-}
-
-.btn {
-    margin-top: 15px;
-    align-self: flex-end;
-    padding: 10px 15px;
-    background: none;
-    color: teal;
-    border: 1px solid teal;
-}
 </style>

@@ -4,6 +4,8 @@
         <post-item 
         v-for="post in posts"
         :post="post"
+        :key="post.id"
+        @remove="$emit('remove', post)"
         />
 
       
@@ -24,9 +26,5 @@ export default {
 </script>
 
 <style scoped>
-    .post {
-        padding: 15px;
-        border: 2px solid black;
-        margin-top: 15px;
-    }
+    
 </style>
